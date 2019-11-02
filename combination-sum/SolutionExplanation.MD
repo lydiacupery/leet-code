@@ -12,7 +12,7 @@ Where m is the length of the array, n is the length of the longest possible comb
 
 If we draw the code path as a tree, the tree has m “branches” with depth of n.  This is because the backtracking times is called m times until reaching (in the worst case) m.  With a target of 3 and an input array of [1, 2, 3], the first few function calls would look like this:
  
-![FunctionCalls][Diagram.png]
+![FunctionCalls](Diagram.png)
 
 The first level has m^0 leaves, the second level has m^1 leaves etc.  If we sum up each level is m^0 + m^1 + …. + m^n = m ^ (n+1) -1 = 0(m^n).  So the runtime is O(m^n).
 
