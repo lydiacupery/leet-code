@@ -1,4 +1,4 @@
-import { ListNode, Solution, TreeNode } from "./sorted-list-to-bst"
+import { ListNode, TreeNode, Solution2 } from "./sorted-list-to-bst"
 
 /*
 Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
@@ -24,28 +24,10 @@ describe('converted sorted list to BST', () => {
                 val1.next.next.next = new ListNode(5)
                 val1.next.next.next.next = new ListNode(9)
 
-                const resultTreeNode = Solution.sortedListToBST(val1)
-                const resultNodeShouldBe: TreeNode = {
-                        val: 0,
-                        left: {
-                                val: -3,
-                                left: {
-                                        val: -10,
-                                        left: null,
-                                        right: null
-                                },
-                                right: null
-                        },
-                        right: {
-                                val: 9,
-                                right: null,
-                                left: {
-                                        val: 5,
-                                        right: null,
-                                        left: null
-                                },
-                        }
-                }
+                const s = new Solution2();
+
+                const resultTreeNode = s.sortListToBST(val1)
+                const resultNodeShouldBe: TreeNode =  {"left": {"left": null, "right": {"left": null, "right": null, "val": -3}, "val": -10}, "right": {"left": null, "right": {"left": null, "right": null, "val": 9}, "val": 5}, "val": 0}
 
                 expect(resultTreeNode).toEqual(resultNodeShouldBe)
         })
