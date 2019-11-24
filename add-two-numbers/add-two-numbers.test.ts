@@ -30,9 +30,4 @@ describe('add two numbrs', () => {
         expect(res.next!.next!.val).toEqual(8)
 
         })
-    // it('2', () => {
-    //     const number1 = [1, 7]
-    //     const number2 = [2, 2]
-    //     expect(Solution.addNumbers(number1, number2)).toEqual([3, 9])
-    // })
 })
