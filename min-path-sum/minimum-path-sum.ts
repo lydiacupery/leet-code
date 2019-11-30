@@ -20,8 +20,6 @@ public static minPathSum(grid: number[][]) {
                         }
                 }
         }
-        console.log("grid",grid)
-
         return grid[GRID_LENGTH - 1][GRID_WIDTH - 1]
 }
 
