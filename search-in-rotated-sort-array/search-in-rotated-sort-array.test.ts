@@ -1,19 +1,24 @@
 import { Solution } from "./search-in-rotated-sort-array"
 
 /*
-You may assume that duplicates do not exist in the tree.
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 
-For example, given
+(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
 
-preorder = [3,9,20,15,7]
-inorder = [9,3,15,20,7]
-Return the following binary tree:
+You are given a target value to search. If found in the array return its index, otherwise return -1.
 
-    3
-   / \
-  9  20
-    /  \
-   15   7
+You may assume no duplicate exists in the array.
+
+Your algorithm's runtime complexity must be in the order of O(log n).
+
+Example 1:
+
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+Example 2:
+
+Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
 */
 
 describe('creates binary tree out of preorder and inorder', () => {

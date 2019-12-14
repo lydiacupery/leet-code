@@ -19,7 +19,7 @@ export class Solution {
 
                 if (isAscending(firstVal, midVal) ? 
                 target >= firstVal && target < midVal : // 1rst half sorted, target should be in 1rst half
-                (target < midVal || target > lastVal) )  // 1rst half not sorted, 2nd half sorted, target not in 2nd half
+                (target < midVal || target > lastVal) )  // 1rst half not sorted, so 2nd half sorted, check that target not in 2nd half
                 { 
                         return this.searchInRotateSortArrayHelper(nums, target, start, midPoint - 1)
                 } else  { 
