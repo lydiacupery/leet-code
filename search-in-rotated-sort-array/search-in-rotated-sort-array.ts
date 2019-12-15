@@ -12,7 +12,7 @@ export class Solution {
         ): number {
                 if (start > end) { return -1 }
                 const firstVal = nums[start]
-                const midPoint = start + Math.ceil((end - start) / 2)
+                const midPoint = Math.ceil((start + end) / 2)
                 const midVal = nums[midPoint]
                 if (midVal === target) { return midPoint }
                 const lastVal = nums[end]

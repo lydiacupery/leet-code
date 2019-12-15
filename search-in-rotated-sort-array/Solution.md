@@ -3,25 +3,23 @@
 # Approach
 
 
-Recall, in pre-order visit root, then left, then right.
-In in-order, visit root then left then right.
+We do not know where the array is rotated but do know that the array is in ascending order.
 
-We can use the combination of the two lists to determine
-  - the root node
-  - which values are in the left & right sub trees
+An O(log n) runtime is achievable with binary search.  Usually with binary search, split the array into halves, then continue to explore the half of the array the target number would fall in.  If you explore until there is no more array left to be explored (the base case), the value does not exist in the array.
 
-The first value in the pre-order list is the root node.  However, just looking at the pre-order list, we do not know which values are in the left sub tree and which values are in the right sub tree.  
+Binary search can be modified to work in this scenario:
+- Similar to binary search, find the mid point of the values you are searching (the point between start and end)
+- If 
+  vals[start] < vals[mid] the first half of the array is in ascending order
+  vals[mid] < vals[end] the second half of the array is in ascending order
 
-The in-order list will have the left subtree values to the left of the root node and the right subtree values to the right of the root node.  So, we can use the root node frm the pre-order list together with the in-order list to determine the left and right subtree.
-
-Now know the root node along with the values in the left on right subtree.  We can set the root node of the tree to be the root node and compute its left and right subtree recursively. We will hit the base case when there are no more subtree values meaning we can just return null for the subtree.
-
-Initially, I solved this problem by passing in the in order and pre order values for each subtree.  The downside of this approach was that I kept searching through the inorder list to find the root node as determined by the preorder list.  To make this searching more efficient, I am now creating a map of value -> index for the inorder list, making it quicker to find the index in the inorder list of the root node.
-
+  * If the first half of the array is in ascending order, and the target is in the first half of the array, we should continue to search the first half of the array.
+  * If the second half of the array is in ascending order, and the target is in the 2nd half we should continue to search the 2nd half of the array.
+  * If the target is not in the part of the array that is in ascending order, we should search the part of the array that is not in ascending order.
 
 
 ## Runtime
-Time Complexity: O(N)?
-Space Complexity: O(N) - for the map 
+Time Complexity: log(N)
+Space Complexity: O(1)
 
  
