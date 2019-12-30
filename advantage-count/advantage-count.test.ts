@@ -5,27 +5,27 @@ import { Solution1, Solution2 } from "./advantage-count"
 describe('advantage count', () => {
         describe("getIndexForA", () => {
                 it("1", () => {
-                        const res = Solution1.getIndexForA([2,7,11,15], 1, 0, 3)
+                        const res = Solution1.binarySearchIndexForA([2,7,11,15], 1, 0, 3)
                         expect(res).toEqual(0)
                 })
                 it("2", () => {
-                        const res = Solution1.getIndexForA([7,11,15], 10, 0, 2)
+                        const res = Solution1.binarySearchIndexForA([7,11,15], 10, 0, 2)
                         expect(res).toEqual(1)
                 })
                 it("3", () => {
-                        const res = Solution1.getIndexForA([7,15], 4, 0, 1)
+                        const res = Solution1.binarySearchIndexForA([7,15], 4, 0, 1)
                         expect(res).toEqual(0)
                 })
                 it("3", () => {
-                        const res = Solution1.getIndexForA([15], 11, 0, 0)
+                        const res = Solution1.binarySearchIndexForA([15], 11, 0, 0)
                         expect(res).toEqual(0)
                 })
                 it("4", () => {
-                        const res = Solution1.getIndexForA([8, 12, 24, 32], 13, 0, 3)
+                        const res = Solution1.binarySearchIndexForA([8, 12, 24, 32], 13, 0, 3)
                         expect(res).toEqual(2)
                 })
                 it("5", () => {
-                        const res = Solution1.getIndexForA([8, 12, 32], 25, 0, 2)
+                        const res = Solution1.binarySearchIndexForA([8, 12, 32], 25, 0, 2)
                         expect(res).toEqual(2)
                 })
 

@@ -27,7 +27,7 @@ export class Solution1 {
     let bIndex = 0;
 
     while(bIndex < B.length){
-      let aIndex = this.getIndexForA(A, B[bIndex], 0, A.length - 1)
+      let aIndex = this.binarySearchIndexForA(A, B[bIndex], 0, A.length - 1)
       newA.push(A[aIndex])
       A.splice(aIndex, 1)
 
@@ -39,7 +39,7 @@ export class Solution1 {
 
 
   // get smallest value bigger than bVal
-  public static getIndexForA(aVals: number[], bVal: number, startIndex: number, stopIndex: number): number{
+  public static binarySearchIndexForA(aVals: number[], bVal: number, startIndex: number, stopIndex: number): number{
     if(stopIndex < startIndex) {
       return 0
     }
@@ -53,10 +53,10 @@ export class Solution1 {
     }
 
     if(bVal >= midVal){
-      return this.getIndexForA(aVals, bVal,midIndex + 1, stopIndex)
+      return this.binarySearchIndexForA(aVals, bVal,midIndex + 1, stopIndex)
     }
     else { 
-      return this.getIndexForA(aVals, bVal,startIndex, midIndex -1 )
+      return this.binarySearchIndexForA(aVals, bVal,startIndex, midIndex -1 )
     }
   }
 }

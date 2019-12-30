@@ -59,7 +59,7 @@ export class Solution {
         const rhi = (width -1) - hi
         const right = rhi < width - 1? matrix[rvi][rhi+1] : maxSquares
         const bottom = rvi < length - 1 ? matrix[rvi+1][rhi] : maxSquares
-        matrix[rvi][rhi] = Math.min( (Math.min(right, bottom) + 1), matrix[rvi][rhi])
+        matrix[rvi][rhi] = Math.min((Math.min(right, bottom) + 1), matrix[rvi][rhi])
       })
     })
 
