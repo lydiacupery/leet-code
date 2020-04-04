@@ -3,7 +3,6 @@ import { Solution2 } from "./roads-and-libraries"
 
 describe('roads and libraries', () => {
         it("1", () => {
-        
         const sol = new Solution2()
         const res = sol.roadsAndLibraries(3, 2, 1, [
                 [1, 2],
@@ -13,7 +12,6 @@ describe('roads and libraries', () => {
         expect(res).toEqual(4)
         })
         it("2", () => {
-        
         const sol = new Solution2()
         const res = sol.roadsAndLibraries(6, 2, 5, [
                 [1, 3],
